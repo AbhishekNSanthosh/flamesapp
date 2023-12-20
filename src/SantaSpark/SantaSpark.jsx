@@ -6,6 +6,7 @@ const SantaSpark = () => {
     const [yourName, setYourName] = useState('');
     const [partnerName, setPartnerName] = useState('');
     const [result, setResult] = useState('');
+    const [showPop, setShowpop] = useState(false);
 
     const handleYourNameChange = (e) => setYourName(e.target.value);
     const handlePartnerNameChange = (e) => setPartnerName(e.target.value);
@@ -79,16 +80,31 @@ const SantaSpark = () => {
                     <p className={styles.about}> 90s Flames Calculator: Input names, reveal secrets—Friends or Frenemies? Embrace memories, blame the calculator for fails. 🎉💔</p>
                 </div>
                 <div className={styles.btmRow}>
-                    <span className={styles.abtleft}>
-                        Made by <span className={styles.high}>pavamDevs🤍</span>
+                    <span className={styles.abtleft} >
+                        Made by <span className={styles.high} onClick={() => {
+                            setShowpop(!showPop)
+                        }}>pavamDevs🤍</span>
                     </span>
                     <span className={styles.disclaimer}>
                         Disclaimer: Privacy first! We don't collect any data from your input—your secrets are safe with us!
                     </span>
                     <div></div>
-                    <span className={styles.abt}>
-                        Made by pavamDevs🤍
+                    <span className={styles.abt} >
+                        Made by <span className={styles.high} onClick={() => {
+                            setShowpop(!showPop)
+                        }}>pavamDevs🤍</span>
                     </span>
+                    {showPop && <div className={styles.popup}>
+                        <span className={styles.close} onClick={() => {
+                            setShowpop(false);
+                        }}>X</span>
+                        <span className={styles.info}>
+                            <a href="https://www.instagram.com/__.alfred.__.joe.__?igshid=OGQ5ZDc2ODk2ZA==">Alfred Joe Devasia</a>
+                        </span>
+                        <span className={styles.info}>
+                            <a href="https://www.instagram.com/abhishek_.abhii._/">Abhishek Santhosh</a>
+                        </span>
+                    </div>}
                 </div>
             </div>
         </div>

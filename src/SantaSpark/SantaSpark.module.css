@@ -225,6 +225,7 @@
 
 .high {
     cursor: pointer;
+    font-weight: 600;
 }
 
 @media only screen and (max-width: 767px) {
@@ -257,4 +258,49 @@
         font-size: 0.7rem;
         display: block;
     }
+}
+
+.popup {
+    position: absolute;
+    bottom: 3rem;
+    height: 8rem;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    width: 13rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .popup {
+        position: absolute;
+        bottom: 2.5rem;
+        width: 95%;
+        height: 1rem;
+        padding: 3rem 0;
+        background-color: #fff;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        justify-content: center;
+    }
+}
+
+a{
+    text-decoration: none;
+    color:#000
+}
+
+
+.close{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    color: #000;
+    cursor: pointer;
 }
