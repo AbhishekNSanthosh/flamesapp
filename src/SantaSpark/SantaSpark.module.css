@@ -10,6 +10,19 @@
     background-size: 100% 100%;
 }
 
+@media only screen and (max-width: 767px) {
+    .container {
+        display: flex;
+        background-position: center;
+        background-image: url('../assets/mob1.png');
+        object-fit: cover;
+        background-position: center;
+        /* background:linear-gradient(to bottom ,rgb(255, 0, 0),rgb(255, 121, 121)); */
+        height: 100vh;
+        color: #fff;
+        background-size: 100% 100%;
+    }
+}
 
 .wrap {
     width: 100%;
@@ -20,6 +33,19 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+}
+
+@media only screen and (max-width: 767px) {
+    .wrap {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .txtBox {
@@ -44,16 +70,18 @@
     gap: 1.5rem;
 }
 
-.category {
-    font-size: 1rem;
+@media only screen and (max-width: 767px) {
+    .row {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+    }
 }
 
-.disclaimer {
-    position: absolute;
-    bottom: 1rem;
-    font-size: 0.7rem;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: 1.1px;
+.category {
+    font-size: 1rem;
 }
 
 .submitBtn {
@@ -63,7 +91,12 @@
     border: none;
     font-family: 'Plus Jakarta Sans', sans-serif;
     outline: none;
-    padding: 13px 15px;
+    padding: 13px;
+    width: 10rem;
+    background-color: rgb(255, 238, 0);
+    border: 2px solid #ff0000;
+    color: red;
+    font-weight: 500;
     font-size: 1.2rem;
     border-radius: 10px;
     cursor: pointer;
@@ -73,7 +106,128 @@
     height: 15rem;
 }
 
-.result{
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.typingResult {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #000;
+    /* Add a border for a cursor effect */
+    animation: typing 2s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #000;
+    }
+}
+
+.result {
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .result {
+        font-size: 1.1rem;
+    }
+}
+
+.resultRow{
+    width: 100%;
     display: flex;
-    font-size: 1.3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .resultRow{
+        width: 100%;
+        display: flex;
+        height: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.sentence {
+    width: 65%;
+    flex-wrap: nowrap;
+}
+
+@media only screen and (max-width: 767px) {
+    .sentence {
+        width: 95%;
+        flex-wrap: nowrap;
+    }
+}
+
+.about {
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 767px) {
+    .abt {
+        font-size: 0.7rem;
+    }
+}
+
+.abt {
+    font-size: 0.7rem;
+}
+
+.btmRow{
+    position: absolute;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 1rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .btmRow{
+        position: absolute;
+        width: 95%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        bottom: 1rem;
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .abtleft{
+        display: none;
+    }
+}
+
+.disclaimer {
+    font-size: 0.7rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 1.1px;
+}
+
+@media only screen and (max-width: 767px) {
+    .disclaimer {
+        font-size: 0.7rem;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: 1.1px;
+    }
 }

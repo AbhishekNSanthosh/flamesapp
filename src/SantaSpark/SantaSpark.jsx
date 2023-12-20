@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './SantaSpark.module.css'
 import bg from '../assets/kids1.png'
 
@@ -30,7 +30,6 @@ const SantaSpark = () => {
 
         const result = flames[0];
 
-        // Custom messages for each result
         switch (result) {
             case 'Friendship':
                 setResult(`You and ${partnerName} have a great friendship! 🤝`);
@@ -54,44 +53,45 @@ const SantaSpark = () => {
                 setResult('Something went wrong. Please try again.');
         }
     };
+
+
     return (
         <div className={styles.container}>
             <div className={styles.wrap}>
                 <div className={styles.row}>
                     <img src={bg} alt="" className={styles.banner} />
                 </div>
-                {
-                    result &&
-                    <div className={styles.row}>
+                {result && (
+                    <div className={styles.resultRow}>
                         <span className={styles.result}>{result}</span>
                     </div>
-                }
+                )}
                 <div className={styles.row}>
                     <input type="text" onChange={handleYourNameChange} placeholder='Your name , eg: Jacs' className={styles.txtBox} />
                     <input type="text" onChange={handlePartnerNameChange} placeholder="Partner's name" className={styles.txtBox} />
                 </div>
                 <div className={styles.row}>
-                    <span className={styles.category}>Friends</span>
-                    <span className={styles.category}>|</span>
-                    <span className={styles.category}>Love</span>
-                    <span className={styles.category}>|</span>
-                    <span className={styles.category}>Affection</span>
-                    <span className={styles.category}>|</span>
-                    <span className={styles.category}>Marriage</span>
-                    <span className={styles.category}>|</span>
-                    <span className={styles.category}>Enemy</span>
-                    <span className={styles.category}>|</span>
-                    <span className={styles.category}>Sister</span>
+                    <button onClick={calculateResult} className={styles.submitBtn}>
+                        🔥Check🔥
+                    </button>
                 </div>
-                <div className={styles.row}>
-                    <button onClick={() => {
-                        calculateResult()
-                    }} className={styles.submitBtn}>Check your match</button>
+                <div className={styles.sentence}>
+                    <p className={styles.about}> 90s Flames Calculator: Input names, reveal secrets—Friends or Frenemies? Embrace memories, blame the calculator for fails. 🎉💔</p>
                 </div>
-                <span className={styles.disclaimer}>Disclaimer: Privacy first! We don't collect any data from your input—your secrets are safe with us!</span>
+                <div className={styles.btmRow}>
+                    <span className={styles.abtleft}>
+                        Made by pavamDevs🤍
+                    </span>
+                    <span className={styles.disclaimer}>
+                        Disclaimer: Privacy first! We don't collect any data from your input—your secrets are safe with us!
+                    </span>
+                    <span className={styles.abt}>
+                        Made by pavamDevs🤍
+                    </span>
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SantaSpark
+export default SantaSpark;
