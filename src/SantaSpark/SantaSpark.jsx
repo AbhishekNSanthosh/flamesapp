@@ -80,11 +80,12 @@ const SantaSpark = () => {
                 </div>
                 <div className={styles.btmRow}>
                     <span className={styles.abtleft}>
-                        Made by pavamDevs🤍
+                        Made by <span className={styles.high}>pavamDevs🤍</span>
                     </span>
                     <span className={styles.disclaimer}>
                         Disclaimer: Privacy first! We don't collect any data from your input—your secrets are safe with us!
                     </span>
+                    <div></div>
                     <span className={styles.abt}>
                         Made by pavamDevs🤍
                     </span>
